@@ -1,2 +1,3 @@
-![Student_Clearance_System](https://github.com/user-attachments/assets/0015ce97-96e4-48b3-982f-7209e0fb50e3)
+![Student_Clearance_System](https://github.com/user-attachments/assets/d9897635-7d65-4272-90cc-755b4a173bce)
+
 A streamlined student clearance system enabling direct communication between students and staff to simplify and accelerate the clearance process.
