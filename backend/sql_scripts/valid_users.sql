@@ -1,0 +1,51 @@
+-- 20 valid students
+INSERT INTO accounts_validstudent (enrollment_number, university_email, name, department, status)
+VALUES
+('ENR001', 'student1@university.edu', 'Alice Mwangi', 'Computer Science', 'active'),
+('ENR002', 'student2@university.edu', 'John Doe', 'Physics', 'active'),
+('ENR003', 'student3@university.edu', 'Jane Doe', 'Math', 'active'),
+('ENR004', 'student4@university.edu', 'Mark Smith', 'Engineering', 'active'),
+('ENR005', 'student5@university.edu', 'Linda Brown', 'Biology', 'active'),
+('ENR006', 'student6@university.edu', 'Emma Johnson', 'Chemistry', 'active'),
+('ENR007', 'student7@university.edu', 'Noah Kim', 'Physics', 'active'),
+('ENR008', 'student8@university.edu', 'Liam Lee', 'Computer Science', 'active'),
+('ENR009', 'student9@university.edu', 'Sophia Patel', 'Engineering', 'active'),
+('ENR010', 'student10@university.edu', 'James Williams', 'Math', 'active'),
+('ENR011', 'student11@university.edu', 'Emily Jones', 'Biology', 'active'),
+('ENR012', 'student12@university.edu', 'Lucas Wilson', 'Chemistry', 'active'),
+('ENR013', 'student13@university.edu', 'Mia Brown', 'Computer Science', 'active'),
+('ENR014', 'student14@university.edu', 'Benjamin White', 'Physics', 'active'),
+('ENR015', 'student15@university.edu', 'Olivia Green', 'Engineering', 'active'),
+('ENR016', 'student16@university.edu', 'Ava Hall', 'Math', 'active'),
+('ENR017', 'student17@university.edu', 'William Young', 'Biology', 'active'),
+('ENR018', 'student18@university.edu', 'Lucas Scott', 'Chemistry', 'active'),
+('ENR019', 'student19@university.edu', 'Mason Adams', 'Physics', 'active'),
+('ENR020', 'student20@university.edu', 'Sophia Clark', 'Computer Science', 'active');
+
+-- Valid staff
+INSERT INTO accounts_validstaff (staff_id, university_email, name, department, clearance_type, role, status)
+VALUES
+('STF001', 'staff1@university.edu', 'Jane Staff', 'Library', 'library', 'staff', 'active'),
+('STF002', 'staff2@university.edu', 'Mark Supervisor', 'Engineering', 'project', 'staff', 'active'),
+('STF003', 'staff3@university.edu', 'Lucy Lab', 'Science Lab', 'lab', 'staff', 'active'),
+('STF004', 'staff4@university.edu', 'Paul Library', 'Library', 'library', 'staff', 'active'),
+('STF005', 'staff5@university.edu', 'Anna Project', 'Engineering', 'project', 'staff', 'active'),
+('STF006', 'staff6@university.edu', 'Steve Lab', 'Science Lab', 'lab', 'staff', 'active'),
+('STF007', 'staff7@university.edu', 'Mary Library', 'Library', 'library', 'staff', 'active'),
+('STF008', 'staff8@university.edu', 'James Project', 'Engineering', 'project', 'staff', 'active'),
+('STF009', 'staff9@university.edu', 'Pat Lab', 'Science Lab', 'lab', 'staff', 'active'),
+('STF010', 'staff10@university.edu', 'Nina Library', 'Library', 'library', 'staff', 'active'),
+('STF011', 'staff11@university.edu', 'Tom Project', 'Engineering', 'project', 'staff', 'active'),
+('STF012', 'staff12@university.edu', 'Jill Lab', 'Science Lab', 'lab', 'staff', 'active'),
+('STF013', 'staff13@university.edu', 'Max Library', 'Library', 'library', 'staff', 'active'),
+('STF014', 'staff14@university.edu', 'Eva Project', 'Engineering', 'project', 'staff', 'active'),
+('STF015', 'staff15@university.edu', 'Liam Lab', 'Science Lab', 'lab', 'staff', 'active'),
+('STF016', 'staff16@university.edu', 'Lily Library', 'Library', 'library', 'staff', 'active'),
+('STF017', 'staff17@university.edu', 'Lucas Project', 'Engineering', 'project', 'staff', 'active'),
+('STF018', 'staff18@university.edu', 'Owen Lab', 'Science Lab', 'lab', 'staff', 'active'),
+('STF019', 'staff19@university.edu', 'Grace Library', 'Library', 'library', 'staff', 'active'),
+('ADM001', 'admin_comp@university.edu', 'Comp Sci Admin', 'Computing Department', NULL, 'admin', 'active'),
+('ADM002', 'admin_chem@university.edu', 'Chemistry Admin', 'Chemistry Department', NULL, 'admin', 'active'),
+('ADM003', 'admin_eng@university.edu', 'Engineering Admin', 'Engineering Department', NULL, 'admin', 'active'),
+('ADM004', 'admin_bio@university.edu', 'Biology Admin', 'Biology Department', NULL, 'admin', 'active'),
+('ADM005', 'admin_math@university.edu', 'Mathematics Admin', 'Mathematics Department', NULL, 'admin', 'active');

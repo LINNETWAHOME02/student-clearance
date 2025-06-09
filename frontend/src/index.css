@@ -1,3 +1,108 @@
-@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+.fonti{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+body{
+    background-color: #f6f4f4;
+}
+
+.prompt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/*********************************** BUTTONS ************************************/
+/* Ensure uniformity in all buttons */
+.btn_uniform {
+  @apply w-80 h-10 text-sm;
+}
+
+/*Button without background*/
+.btn_no_bg{
+    border: 1px solid #3575e2;
+    padding: .4rem 3.5rem;
+    background: #fff;
+    color: #3575e2;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+.btn_no_bg:hover{
+    border: none;
+    background-color: #3575e2;
+    color: #fff;
+}
+.btn_no_bg:active{
+    border: none;
+    background-color: #103d8d;
+    color: #fff;
+}
+
+/*Button with background*/
+.btn_bg{
+    border: none;
+    padding: .4rem 3.5rem;
+    background: #3575e2;
+    color: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+.btn_bg:hover{
+    border: 1px solid #3575e2;
+    background: #fff;
+    color: #3575e2;
+}
+.btn_bg:active{
+    border: none;
+    background-color: #103d8d;
+    color: #fff;
+}
+
+/* ************************************** INPUT FIELD STYLING **************************************** */
+/* Plain CSS equivalent */
+.input-styled {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #111827;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  padding: 0.625rem;
+  display: block;
+  width: 100%;
+}
+
+/* Focus styles */
+.input-styled:focus {
+  outline: none;
+  border-color: #3575E2;
+  box-shadow: 0 0 0 1px #3575E2;
+}
+
+/* Dark mode styles
+@media (prefers-color-scheme: dark) {
+  .input-styled {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #ffffff;
+  }
+
+  .input-styled::placeholder {
+    color: #9ca3af;
+  }
+
+  .input-styled:focus {
+    border-color: #3575E2;
+    box-shadow: 0 0 0 1px #3575E2;
+  }
+} */
