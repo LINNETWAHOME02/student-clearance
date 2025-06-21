@@ -1,2 +1,11 @@
 db.sqlite
 .env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Django migration files
+migrations/
+migrations/*.py[cod]
+migrations/[0-9]*.py
