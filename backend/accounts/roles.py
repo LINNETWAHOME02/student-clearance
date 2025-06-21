@@ -9,7 +9,7 @@ class Student(AbstractUserRole):
         'view_request_history': True,
     }
 
-class ProjectSupervisor(AbstractUserRole):
+class Staff(AbstractUserRole):
     available_permissions = {
         'view_assigned_requests': True,
         'approve_requests': True,
@@ -18,25 +18,7 @@ class ProjectSupervisor(AbstractUserRole):
         'view_request_history': True,
     }
 
-class LabStaff(AbstractUserRole):
-    available_permissions = {
-        'view_assigned_requests': True,
-        'approve_requests': True,
-        'reject_requests': True,
-        'communicate_with_student': True,
-        'view_request_history': True,
-    }
-
-class LibraryStaff(AbstractUserRole):
-    available_permissions = {
-        'view_assigned_requests': True,
-        'approve_requests': True,
-        'reject_requests': True,
-        'communicate_with_student': True,
-        'view_request_history': True,
-    }
-
-class SystemAdmin(AbstractUserRole):
+class Admin(AbstractUserRole):
     available_permissions = {
         'view_all_requests': True,
         'override_decisions': True,

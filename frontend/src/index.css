@@ -4,16 +4,14 @@
 @tailwind components;
 @tailwind utilities; */
 
-.fonti{
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-
 body{
     background-color: #f6f4f4;
+}    
+
+/********************************** CUSTOM BACKGROUND STYLE**************************************/
+.custom_background{
+  background: linear-gradient(to bottom right, #f7fdfd, #f0f8fa, #f6fefe, #f4f8f8);
+  border-radius: 15px;
 }
 
 .prompt {
