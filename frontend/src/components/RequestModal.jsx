@@ -55,7 +55,7 @@ const RequestModal = ({ request, onClose, onApprove, onReject }) => {
               </div>
               <div>
                 <p className="text-gray-600">Student ID</p>
-                <p className="font-medium">{request.student.studentId}</p>
+                <p className="font-medium">{request.student.id_number}</p>
               </div>
               <div>
                 <p className="text-gray-600">Email</p>
@@ -104,11 +104,17 @@ const RequestModal = ({ request, onClose, onApprove, onReject }) => {
                 <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center gap-2">
                     <FileText className="w-4 h-4 text-gray-500" />
-                    <span className="text-sm font-medium">{doc}</span>
+                    {/* In-case I want to add mutiple document submission */}
+                    <span className="text-sm font-medium">{doc.split('/').pop()}</span>
                   </div>
-                  <button className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                  <a
+                    href={request.file} // will use {doc} for each doc to have its full path if handling multiple documents
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                  >
                     View
-                  </button>
+                  </a>
                 </div>
               ))}
             </div>

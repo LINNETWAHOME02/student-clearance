@@ -1,6 +1,10 @@
-db.sqlite
+db.sqlite3
 .env
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
 
-# Migration history
-**/migrations/*.py
-!**/migrations/__init__.py
+# Django migration files
+migrations/
+migrations/*.py[cod]
+migrations/[0-9]*.py

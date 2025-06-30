@@ -8,14 +8,19 @@ import EditProfile from './components/EditProfile';
 // Student urls
 import StudentDashboard from './pages/student/StudentDashboard';
 import { ProjectClearance, LabClearance, LibraryClearance } from './pages/student/ClearanceForm';
-import Status from './pages/student/Status';
+import StudentStatus from './pages/student/StudentStatus';
+import StudentHistory from './pages/student/StudentHistory';
 
 
 // Staff urls
 import StaffDashboard from './pages/staff/StaffDashboard';
+import ViewRequests from './pages/staff/ViewRequests';
+import StaffHistory from './pages/staff/StaffHistory';
 
 // Admin urls
 import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminHistory from './pages/admin/AdminHistory';
+import MyStudents from './pages/staff/MyStudents';
 
 function App() {
   const { user } = useAuth();
@@ -50,8 +55,8 @@ function App() {
               <Route path="lab-clearance" element={<LabClearance />} />
               <Route path="library-clearance" element={<LibraryClearance />} />
 
-              <Route path="status" element={<Status/>} />
-
+              <Route path="student-status" element={<StudentStatus/>} />
+              <Route path="history" element={<StudentHistory />} />
               <Route path="edit-profile" element={<EditProfile />} />
             </Routes>
           ) : (
@@ -64,7 +69,9 @@ function App() {
           user?.role === 'staff' ? (
             <Routes>
               <Route path="dashboard" element={<StaffDashboard />} />
-
+              <Route path="my-students" element={<MyStudents />} />
+              <Route path="requests" element={<ViewRequests />} />
+              <Route path="history" element={<StaffHistory />} />
               <Route path="edit-profile" element={<EditProfile />} />
             </Routes>
           ) : (
@@ -77,6 +84,10 @@ function App() {
           user?.role === 'admin' ? (
             <Routes>
               <Route path="dashboard" element={<AdminDashboard />} />
+
+              <Route path="history/students" element={<AdminHistory tab="students" />} />
+              <Route path="history/staff" element={<AdminHistory tab="staff" />} />
+              <Route path="history/admin" element={<AdminHistory tab="admin" />} />
 
               <Route path="edit-profile" element={<EditProfile />} />
             </Routes>

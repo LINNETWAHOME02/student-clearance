@@ -4,10 +4,9 @@ import useSafeLocalStorage from '../hooks/useSafeLocalStorage';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  
   const [user, setUser] = useSafeLocalStorage('user', null);
 
- const login = (data) => {
+  const login = (data) => {
     setUser(data.user);
     localStorage.setItem('accessToken', data.access);
     localStorage.setItem('refreshToken', data.refresh);
@@ -30,27 +29,30 @@ export const AuthProvider = ({ children }) => {
       console.warn('Logout API failed', err);
     }
 
-    // Clear everything from localStorage
     localStorage.removeItem('user');
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
     setUser(null);
 
-    // Redirect based on role
     if (role === 'student') navigate('/auth/student');
     else if (role === 'staff') navigate('/auth/staff');
     else if (role === 'admin') navigate('/auth/admin');
     else navigate('/auth');
   };
 
-
-
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        setUser,
+        login,
+        logout,
+        token: localStorage.getItem('accessToken'),
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
 
-// Hook for using the context
 export const useAuth = () => useContext(AuthContext);
