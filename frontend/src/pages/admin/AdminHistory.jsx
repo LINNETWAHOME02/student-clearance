@@ -1,4 +1,3 @@
-// AdminHistory.jsx
 import React, { useEffect, useState } from 'react';
 import HistoryTab from '../../components/HistoryTab';
 import Layout from '../../layout/Layout';
