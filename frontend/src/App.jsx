@@ -21,6 +21,7 @@ import StaffHistory from './pages/staff/StaffHistory';
 // Admin urls
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminHistory from './pages/admin/AdminHistory';
+
 function App() {
   const { user } = useAuth();
 
