@@ -26,13 +26,13 @@ const RequestCard = ({ request, onViewRequest }) => {
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
             <h3 className="font-semibold text-gray-900">{request.student.name}</h3>
-            <span className="text-sm text-gray-500">({request.student.studentId})</span>
+            <span className="text-sm text-gray-500">({request.student.id_number})</span>
             <span className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(request.status)}`}>
               {request.status}
             </span>
           </div>
           <p className="text-sm text-gray-600 mb-1">{request.type}</p>
-          <p className="text-xs text-gray-500">Submitted: {request.date}</p>
+          <p className="text-xs text-gray-500">Submitted on: {request.date}</p>
           <p className="text-xs text-gray-500">{request.student.course} • {request.student.department}</p>
         </div>
         <div className="flex items-center gap-2">

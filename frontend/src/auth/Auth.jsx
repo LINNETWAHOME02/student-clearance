@@ -54,7 +54,7 @@ const Auth = (props) => {
   const defaultRole = roles.indexOf((props.defaultRole || 'Student').trim());
   const [activeIndex, setActiveIndex] = useState(defaultRole >= 0 ? defaultRole : 0);
 
-  const [isActivated, setIsActivated] = useState(false);
+  const [isActivated, setIsActivated] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [message, setMessage] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
@@ -344,7 +344,7 @@ const Auth = (props) => {
           </div>
           <input
             type={showPassword ? 'text' : 'password'}
-            placeholder="Create a strong password"
+            placeholder="Enter password"
             value={formData.password}
             onChange={(e) => handleInputChange('password', e.target.value)}
             className={`w-full pl-12 pr-12 py-4 bg-gray-50 border border-gray-200 rounded-xl 

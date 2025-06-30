@@ -2,9 +2,11 @@ import React from 'react';
 import Form from './Form';
 import { useAuth } from '../context/AuthProvider';
 import Layout from '../layout/Layout';
+import { useNavigate } from 'react-router-dom';
 
 const EditProfile = () => {
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
+  const navigate = useNavigate();
   const role = user?.role?.toLowerCase();
   if (!user) return null;
 
@@ -42,6 +44,9 @@ const EditProfile = () => {
       label: 'Profile Picture',
       accept: '.jpg,.jpeg,.png',
       multiple: false,
+      uploadText: 'Upload Profile Picture',
+      acceptedTypes: 'JPG, JPEG, PNG up to 1MB',
+      maxSize: 1,
     }
   ];
 
@@ -51,37 +56,60 @@ const EditProfile = () => {
   else if (role === 'admin') roleSpecificFields = adminFields;
 
   const handleProfileSubmit = async (formData) => {
-      try {
-        const userId = user.id;
-        const token = localStorage.getItem("accessToken");
+    try {
+      const userId = user.id;
+      const token = localStorage.getItem("accessToken");
 
-        const res = await fetch(`http://localhost:8000/accounts/profile/update/`, {
-          method: 'PATCH',
+      const endpoint =
+        user.role === "admin"
+          ? `http://localhost:8000/accounts/admin/user/${userId}/update/`
+          : `http://localhost:8000/accounts/profile/update/`;
+
+      const res = await fetch(endpoint, {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert('Profile updated!');
+
+        const meRes = await fetch('http://localhost:8000/accounts/user/me/', {
+          method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          body: formData
         });
 
-        const data = await res.json();
-        if (res.ok) {
-          alert('Profile updated!');
-        } else {
-          console.error(data);
-          alert('Update failed.');
+        if (meRes.ok) {
+          const updatedUser = await meRes.json();
+          setUser(updatedUser);
         }
-      } catch (err) {
-        console.error("Error updating profile:", err);
-        alert('Something went wrong.');
-      }
-    };
 
+        if (user.role === 'student') {
+          navigate('/student/dashboard');
+        } else if (user.role === 'staff') {
+          navigate('/staff/dashboard');
+        } else if (user.role === 'admin') {
+          navigate('/admin/dashboard');
+        }
+      } else {
+        console.error(data);
+        alert('Update failed.');
+      }
+    } catch (err) {
+      console.error("Error updating profile:", err);
+      alert('Something went wrong.');
+    }
+  };
 
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50 p-6">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-800 text-center mb-8">Edit Profile</h1>
           <Form
             title="Edit Your Profile"
             fields={[...commonFields, ...roleSpecificFields]}
