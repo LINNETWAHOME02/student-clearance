@@ -14,14 +14,13 @@ import StudentHistory from './pages/student/StudentHistory';
 
 // Staff urls
 import StaffDashboard from './pages/staff/StaffDashboard';
+import MyStudents from './pages/staff/MyStudents';
 import ViewRequests from './pages/staff/ViewRequests';
 import StaffHistory from './pages/staff/StaffHistory';
 
 // Admin urls
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminHistory from './pages/admin/AdminHistory';
-import MyStudents from './pages/staff/MyStudents';
-
 function App() {
   const { user } = useAuth();
 
